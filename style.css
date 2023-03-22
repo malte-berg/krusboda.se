@@ -50,9 +50,23 @@ header {
 }
 
 .card-container {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2em;
+}
+
+.card-container::before {
+    content: '';
+    position: absolute;
+    background-color: beige;
+    left: calc(-20vw);
+    top: -18%;
+    width: 200%;
+    height: 130%;
+    z-index: -1;
+    transform: rotate(-2deg);
+    overflow-x: hidden;
 }
 
 .card {
@@ -78,4 +92,8 @@ header {
     .card-container {
         grid-template-columns: 1fr;
     }
+}
+
+.card-section-heading {
+    font-weight: 200;
 }
